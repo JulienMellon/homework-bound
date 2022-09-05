@@ -6,7 +6,32 @@
 							<header>
 								<!-- injection -->
 								<h1>Todos</h1>
-								<ul>
+								<table>
+									<thead>
+									  <tr>
+										<th>Todo</th>
+										<th>Date</th>
+										<th>Action</th>
+									  </tr>
+									</thead>
+									<tbody>
+										<% todos.forEach( el => { %>
+											<tr class='todoItem' data-id='<%=el._id%>'>
+												<td class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></td>
+												<td><%= el.dueDate.toDateString() %></td>
+												<td class='del'> Delete </td>
+											</tr>
+									<% }) %> 									  
+									</tbody>
+									<!-- <tfoot>
+									  <tr>
+										<td>Footer content 1</td>
+										<td>Footer content 2</td>
+										<td>Footer 3</td>
+									  </tr>
+									</tfoot> -->
+								  </table>
+								<!-- <ul>
 								<% todos.forEach( el => { %>
 										<li class='todoItem' data-id='<%=el._id%>'>
 											<span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
@@ -14,7 +39,7 @@
 											<span class='del'> Delete </span>
 										</li>
 								<% }) %>    
-								</ul>
+								</ul> -->
 							
 								<h2><%= user.userName %> has <%= left %> things left to do.</h2>
 							
@@ -28,8 +53,8 @@
 							
 								<script src="js/main.js"></script>
 								<!-- injection  -->
-								<h2>Howdy. This is Dopetrope.</h2>
-								<p>A responsive template by HTML5 UP</p>
+								<!-- <h2>Howdy. This is Dopetrope.</h2>
+								<p>A responsive template by HTML5 UP</p> -->
 							</header>
 						</section>
 				</section>
