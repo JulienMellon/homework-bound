@@ -1510,11 +1510,12 @@ input, select, textarea {
 			}
 
 		table td {
-			font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+			font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 			font-size: larger;
 			color: White;
 			padding: 0.5em 1em 0.5em 1em;
-			border: 6px solid red;
+			background-color: #1075a9;
+			border: 6px solid peru;
 		}
 
 		table th {
