@@ -8,7 +8,7 @@ const flash = require('express-flash')
 const logger = require('morgan')
 const connectDB = require('./config/database')
 const mainRoutes = require('./routes/main')
-const todoRoutes = require('./routes/todos')
+const taskRoutes = require('./routes/tasks')
 
 require('dotenv').config({path: './config/config.env'})
 
@@ -42,8 +42,7 @@ app.use(passport.session())
 app.use(flash())
   
 app.use('/', mainRoutes)
-//= change from todos to tasks and taskRoutes
-app.use('/todos', todoRoutes)
+app.use('/tasks', taskRoutes)
  
 app.listen(PORT, ()=>{
     console.log(`Server is running ${PORT}, you better catch it!`)

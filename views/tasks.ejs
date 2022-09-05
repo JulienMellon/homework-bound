@@ -53,11 +53,11 @@
 						<section id="banner">
 							<header>
 								<!-- injection -->
-								<h1>Todos</h1>
+								<h1>Tasks</h1>
 								<ul>
-								<% todos.forEach( el => { %>
-										<li class='todoItem' data-id='<%=el._id%>'>
-											<span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
+								<% tasks.forEach( el => { %>
+										<li class='taskItem' data-id='<%=el._id%>'>
+											<span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.task %></span>
 											<span class='del'> Delete </span>
 										</li>
 								<% }) %>    
@@ -65,8 +65,8 @@
 							
 								<h2><%= user.userName %> has <%= left %> things left to do.</h2>
 							
-								<form action="/todos/createTodo" method='POST'>
-									<input type="text" placeholder="Enter Todo Item" name='todoItem'>
+								<form action="/tasks/createTask" method='POST'>
+									<input type="text" placeholder="Enter Task Item" name='taskItem'>
 									<input type="submit">
 								</form>
 							
